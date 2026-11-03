@@ -1,0 +1,23 @@
+7. Book details (one object)
+#include <iostream>
+using namespace std;
+class Book {
+string title, author;
+float price;
+public:
+void accept() {
+cout << "Enter book title, author and price: ";
+cin >> title >> author >> price;
+}
+void display() {
+cout << "\nTitle: " << title;
+cout << "\nAuthor: " << author;
+cout << "\nPrice: " << price << endl;
+}
+};
+int main() {
+Book b;
+b.accept();
+b.display();
+return 0;
+}

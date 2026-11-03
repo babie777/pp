@@ -1,0 +1,22 @@
+6. Bank account details
+#include <iostream>
+using namespace std;
+class BankAccount {
+long long accountNo;
+double balance;
+public:
+void accept() {
+cout << "Enter account number and balance: ";
+cin >> accountNo >> balance;
+}
+void display() {
+cout << "\nAccount Number: " << accountNo;
+cout << "\nBalance: " << balance << endl;
+}
+};
+int main() {
+BankAccount b;
+b.accept();
+b.display();
+return 0;
+}

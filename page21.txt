@@ -1,0 +1,39 @@
+21. Multilevel inheritance: Student, Marks and Result
+#include <iostream>
+using namespace std;
+class Student {
+protected:
+int rollNo;
+string name;
+public:
+void acceptStudent() {
+cout << "Enter roll number and name: “;
+cin >> rollNo >> name;
+}
+};
+class Marks : public Student {
+protected:
+int m1, m2, m3;
+public:
+void acceptMarks() {
+cout << "Enter marks of three subjects: ";
+cin >> m1 >> m2 >> m3;
+}
+};
+class Result : public Marks {
+public:
+void display() {
+int total = m1 + m2 + m3;
+cout << "\nRoll No: " << rollNo;
+cout << "\nName: " << name;
+cout << "\nMarks: " << m1 << " " << m2 << " " << m3;
+cout << "\nTotal: " << total << endl;
+}
+};
+int main() {
+Result r;
+r.acceptStudent();
+r.acceptMarks();
+r.display();
+return 0;
+}

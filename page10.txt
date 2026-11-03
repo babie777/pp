@@ -1,0 +1,38 @@
+10. Employee total salary (DA 10%, HRA 20%)
+#include <iostream>
+using namespace std;
+class Employee {
+int empId;
+string name;
+double basic, da, hra, total;
+public:
+void accept() {
+cout << "Enter employee ID and name: ";
+cin >> empId >> name;
+cout << "Enter basic salary: ";
+cin >> basic;
+}
+void calculate() {
+da = basic * 0.10;
+hra = basic * 0.20;
+total = basic + da + hra;
+}
+void display() {
+cout << "\nID: " << empId;
+cout << "\nName: " << name;
+cout << "\nBasic Salary: " << basic;
+cout << "\nDA: " << da;
+cout << "\nHRA: " << hra;
+cout << "\nTotal Salary: " << total << "\n";
+}
+};
+int main() {
+Employee e[2];
+for (int i = 0; i < 2; i++) {
+cout << "\nEmployee " << i + 1 << endl;
+e[i].accept();
+e[i].calculate();
+}
+for (int i = 0; i < 2; i++)
+e[i].display();
+return 0;

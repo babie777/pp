@@ -1,0 +1,57 @@
+15. Student activity participation using class, struct and enum
+#include <iostream>
+#include <string>
+using namespace std;
+enum ParticipationStatus {
+NotParticipated = 1,
+Participated,
+Completed
+};
+struct Activity {
+string activityName;
+int score;
+};
+class Student {
+string name, division;
+int rollNo;
+Activity act;
+ParticipationStatus status;
+public:
+void accept() {
+cout << "Enter student name: ";
+getline(cin >> ws, name);
+cout << "Enter roll number and division: ";
+cin >> rollNo >> division;
+cout << "Enter activity name: ";
+getline(cin >> ws, act.activityName);
+cout << "Enter activity score: ";
+cin >> act.score;
+int choice;
+cin >> choice;
+cout << "Status (1=Not Participated, 2=Participated, 3=Completed): ";
+if (choice == 1 || choice == 2 || choice == 3)
+status = static_cast<ParticipationStatus>(choice);
+else
+status = NotParticipated;
+}
+void display() {
+cout << "\n--- Student Activity Summary ---\n";
+cout << "Name: " << name << "\nRoll No: " << rollNo;
+cout << "\nDivision: " << division;
+cout << "\nActivity: " << act.activityName;
+cout << "\nActivity Score: " << act.score;
+cout << "\nParticipation Status: ";
+switch (status) {
+case NotParticipated: cout << "Not Participated"; break;
+case Participated: cout << "Participated"; break;
+case Completed: cout << "Completed"; break;
+}
+cout << endl;
+}
+};
+int main() {
+Student s;
+s.accept();
+s.display();
+return 0;
+}

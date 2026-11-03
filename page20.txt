@@ -1,0 +1,27 @@
+20. File creation, writing, closing and reading
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+ofstream outFile("student.txt");
+if (!outFile) {
+cout << "Unable to create file.";
+return 1;
+}
+outFile << "Welcome to C++ File Handling\n";
+outFile << "This information is written into a file.\n";
+outFile.close();
+ifstream inFile("student.txt");
+if (!inFile) {
+cout << "Unable to open file.";
+return 1;
+}
+string line;
+cout << "File contents:\n";
+while (getline(inFile, line)) {
+cout << line << endl;
+}
+inFile.close();
+return 0;
+}

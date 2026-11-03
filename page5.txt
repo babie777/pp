@@ -1,0 +1,20 @@
+5. Area of rectangle
+#include <iostream>
+using namespace std;
+class Rectangle {
+float length, breadth;
+public:
+void accept() {
+cout << "Enter length and breadth: ";
+cin >> length >> breadth;
+}
+void displayArea() {
+cout << "Area of rectangle = " << length * breadth << endl;
+}
+};
+int main() {
+Rectangle r;
+r.accept();
+r.displayArea();
+return 0;
+}

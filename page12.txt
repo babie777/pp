@@ -1,0 +1,22 @@
+12. Mobile details
+#include <iostream>
+using namespace std;
+class Mobile {
+string companyName;
+float screenSize;
+public:
+void accept() {
+cout << "Enter company name and screen size: ";
+cin >> companyName >> screenSize;
+}
+void display() {
+cout << "\nCompany: " << companyName;
+cout << "\nScreen Size: " << screenSize << " inches\n";
+}
+};
+int main() {
+Mobile m;
+m.accept();
+m.display();
+return 0;
+}

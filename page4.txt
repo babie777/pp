@@ -1,0 +1,34 @@
+4. Display employees whose salary is greater than 5000 (five objects)
+#include <iostream>
+using namespace std;
+class Employee {
+string empName;
+int empId;
+float salary;
+public:
+void accept() {
+cout << "Enter employee name, ID and salary: ";
+cin >> empName >> empId >> salary;
+}
+void display() {
+cout << "\nName: " << empName
+<< "\nID: " << empId
+<< "\nSalary: " << salary << "\n";
+}
+bool isEligible() {
+return salary > 5000;
+}
+};
+int main() {
+Employee e[5];
+for (int i = 0; i < 5; i++) {
+cout << "\nEmployee " << i + 1 << endl;
+e[i].accept();
+}
+cout << "\nEmployees with salary greater than 5000:\n";
+for (int i = 0; i < 5; i++) {
+if (e[i].isEligible())
+e[i].display();
+}
+return 0;
+}

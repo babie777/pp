@@ -1,0 +1,35 @@
+19. Server and Client inheritance
+#include <iostream>
+using namespace std;
+class Server {
+protected:
+string serv_name;
+int serv_port;
+public:
+void show() {
+cout << "\nServer Name: " << serv_name;
+cout << "\nServer Port: " << serv_port << endl;
+}
+};
+class Client : public Server {
+string client_name;
+int client_port;
+public:
+void accept() {
+cout << "Enter server name and port: ";
+cin >> serv_name >> serv_port;
+cout << "Enter client name and port: ";
+cin >> client_name >> client_port;
+void show() {
+Server::show();
+cout << "Client Name: " << client_name;
+cout << "\nClient Port: " << client_port << endl;
+}
+}
+};
+int main() {
+Client c;
+c.accept();
+c.show();
+return 0;
+}

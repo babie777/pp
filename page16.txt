@@ -1,0 +1,37 @@
+16. Pointer to derived class in single and multilevel inheritance
+#include <iostream>
+using namespace std;
+// Single inheritance
+class Person {
+public:
+void showPerson() {
+cout << "This is Person class\n";
+}
+};
+class Student : public Person {
+public:
+void showStudent() {
+cout << "This is Student class\n";
+}
+};
+// Multilevel inheritance
+class Marks : public Student {
+public:
+void showMarks() {
+cout << "This is Marks class\n";
+}
+};
+int main() {
+Student s;
+Student *p1 = &s;
+p1->showPerson();
+p1->showStudent();
+// Pointer to derived class in single inheritance
+cout << "\nMultilevel inheritance:\n";
+Marks m;
+Marks *p2 = &m;
+p2->showPerson();
+p2->showStudent();
+p2->showMarks();
+return 0;
+}

@@ -1,0 +1,33 @@
+8. Display books whose price is greater than 50 (five objects)
+#include <iostream>
+using namespace std;
+class Book {
+string title, author;
+float price;
+public:
+void accept() {
+cout << "Enter title, author and price: ";
+cin >> title >> author >> price;
+}
+void display() {
+cout << "\nTitle: " << title
+<< "\nAuthor: " << author
+<< "\nPrice: " << price << "\n";
+}
+bool isCostly() {
+return price > 50;
+}
+};
+int main() {
+Book b[5];
+for (int i = 0; i < 5; i++) {
+cout << "\nBook " << i + 1 << endl;
+b[i].accept();
+}
+cout << "\nBooks with price greater than 50:\n";
+for (int i = 0; i < 5; i++) {
+if (b[i].isCostly())
+b[i].display();
+}
+return 0;
+}

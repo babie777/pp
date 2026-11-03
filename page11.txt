@@ -1,0 +1,35 @@
+11. Area using method overloading
+#include <iostream>
+using namespace std;
+class Shape {
+public:
+double area(double r) { return 3.14 * r * r;
+// Circle
+}
+double area(double l, double b) { return l * b;
+// Rectangle
+}
+double area(double side, int) { return side * side;
+// Square
+}
+double area(double base, double h, char) { // Triangle
+return 0.5 * base * h;
+}
+};
+int main() {
+Shape s;
+double r, l, b, side, base, h;
+cout << "Enter radius: ";
+cin >> r;
+cout << "Circle area = " << s.area(r) << endl;
+cout << "Enter rectangle length and breadth: ";
+cin >> l >> b;
+cout << "Rectangle area = " << s.area(l, b) << endl;
+cout << "Enter square side: ";
+cin >> side;
+cout << "Square area = " << s.area(side, 0) << endl;
+cout << "Enter triangle base and height: “;
+cin >> base >> h;
+cout << "Triangle area = " << s.area(base, h, 't') << endl;
+return 0;
+}

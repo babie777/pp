@@ -1,0 +1,38 @@
+9. Display the student with the highest percentage (two objects)
+#include <iostream>
+using namespace std;
+class Student {
+int rollNo;
+string name;
+float m1, m2, percentage;
+public:
+void accept() {
+cout << "Enter roll number and name: ";
+cin >> rollNo >> name;
+cout << "Enter marks of two subjects: ";
+cin >> m1 >> m2;
+percentage = (m1 + m2) / 2.0;
+}
+float getPercentage() {
+return percentage;
+}
+void display() {
+cout << "\nRoll No: " << rollNo;
+cout << "\nName: " << name;
+cout << "\nMarks: " << m1 << ", " << m2;
+cout << "\nPercentage: " << percentage << "%\n";
+}
+};
+int main() {
+Student s[2];
+for (int i = 0; i < 2; i++) {
+cout << "\nStudent " << i + 1 << endl;
+s[i].accept();
+}
+int highest = 0;
+if (s[1].getPercentage() > s[0].getPercentage())
+highest = 1;
+cout << "\nStudent with highest percentage:\n";
+s[highest].display();
+return 0;
+}

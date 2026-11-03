@@ -1,0 +1,24 @@
+1. Student details (roll number, name and marks)
+#include <iostream>
+using namespace std;
+class Student {
+int rollNo;
+string name;
+float marks;
+public:
+void accept() {
+cout << "Enter roll number, name and marks: ";
+cin >> rollNo >> name >> marks;
+}
+void display() {
+cout << "\nRoll No: " << rollNo;
+cout << "\nName: " << name;
+cout << "\nMarks: " << marks << endl;
+}
+};
+int main() {
+Student s;
+s.accept();
+s.display();
+return 0;
+}

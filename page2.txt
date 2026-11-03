@@ -1,0 +1,32 @@
+2. Student percentage (two subjects, one object)
+#include <iostream>
+using namespace std;
+class Student {
+int rollNo;
+string name;
+float m1, m2, percentage;
+public:
+void accept() {
+cout << "Enter roll number and name: ";
+cin >> rollNo >> name;
+cout << "Enter marks of two subjects: ";
+cin >> m1 >> m2;
+}
+void calculate() {
+percentage = (m1 + m2) / 2.0;
+}
+void display() {
+cout << "\nRoll No: " << rollNo;
+cout << "\nName: " << name;
+cout << "\nSubject 1: " << m1;
+cout << "\nSubject 2: " << m2;
+cout << "\nPercentage: " << percentage << "%\n";
+}
+};
+int main() {
+Student s;
+s.accept();
+s.calculate();
+s.display();
+return 0;
+}

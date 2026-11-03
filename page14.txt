@@ -1,0 +1,28 @@
+14. Rectangle area using parameterized constructors (two objects)
+#include <iostream>
+using namespace std;
+class Rectangle {
+float length, width;
+public:
+Rectangle(float l, float w) {
+length = l;
+width = w;
+}
+void displayArea() {
+cout << "Area = " << length * width << endl;
+}
+};
+int main() {
+float l, w;
+cout << "Enter length and width of first rectangle: ";
+cin >> l >> w;
+Rectangle r1(l, w);
+cout << "Enter length and width of second rectangle: ";
+cin >> l >> w;
+Rectangle r2(l, w);
+cout << "\nFirst rectangle: ";
+r1.displayArea();
+cout << "Second rectangle: ";
+r2.displayArea();
+return 0;
+}

@@ -1,0 +1,39 @@
+13. Area using constructor overloading
+#include <iostream>
+using namespace std;
+class Shape {
+double result;
+public:
+Shape(double r) { // Circle
+result = 3.14 * r * r;
+cout << "Circle area = " << result << endl;
+}
+Shape(double l, double b) { // Rectangle
+result = l * b;
+cout << "Rectangle area = " << result << endl;
+}
+Shape(double side, int) { // Square
+result = side * side;
+cout << "Square area = " << result << endl;
+}
+Shape(double base, double h, char) { // Triangle
+result = 0.5 * base * h;
+cout << "Triangle area = " << result << endl;
+}
+};
+int main() {
+double r, l, b, side, base, h;
+cout << "Enter circle radius: ";
+cin >> r;
+Shape c(r);
+cout << "Enter rectangle length and breadth: ";
+cin >> l >> b;
+Shape rec(l, b);
+cout << "Enter square side: ";
+cin >> side;
+Shape sq(side, 0);
+cout << "Enter triangle base and height: ";
+cin >> base >> h;
+Shape tri(base, h, 't');
+return 0;
+}
